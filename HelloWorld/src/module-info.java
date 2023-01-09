@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author Azu
+ *
+ */
+module HelloWorld {
+}
