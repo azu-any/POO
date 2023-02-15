@@ -18,7 +18,7 @@ public class Stack {
 		String myText = "";
 		for(int i=0; i<text.length(); i++) {
 			if(text.charAt(i) != ' ') {
-				myText = myText + text.charAt(i);
+				myText = myText + text.toLowerCase().charAt(i);
 			}
 		}
 			
@@ -56,7 +56,7 @@ public class Stack {
 	public void invertir() {
 		int j = 0;
 		for(int i=this.text.length()-1; i>=0; i--) {
-			this.myStack[j] = this.text.toLowerCase().charAt(i);
+			this.myStack[j] = this.text.charAt(i);
 			j++;
 		}
 	}
@@ -65,7 +65,7 @@ public class Stack {
 		this.invertir();
 		int j = 0;
 		for(int i=0; i<this.text.length(); i++) {
-			if(myStack[i] == this.text.toLowerCase().charAt(i)) {
+			if(myStack[i] == this.text.charAt(i)) {
 				j++;
 			}
 		}
