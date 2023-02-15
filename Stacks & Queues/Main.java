@@ -7,7 +7,7 @@ public class Main {
 		Queue myQueue = new Queue();
 		Stack myStack = new Stack();
 		
-		Stack myStack2 = new Stack();
+		Stack myStack2 = new Stack("Anita lava la tina");
 		
 		myQueue.print();
 		myQueue.insert('1');
@@ -17,7 +17,7 @@ public class Main {
 		myQueue.delete();
 		myQueue.print();
 		
-		System.out.println("\n"); 
+		System.out.println(); 
 		
 		myStack.print();
 		myStack.push('2');
@@ -27,9 +27,11 @@ public class Main {
 		myStack.pop();
 		myStack.print();
 		
-		myStack2.invertir("Ana");
+		System.out.println(); 
+		
+		myStack2.invertir();
 		myStack2.print();
-		System.out.println(myStack2.palindromo("Ana"));
+		System.out.println(myStack2.palindromo());
 	}
 
 }

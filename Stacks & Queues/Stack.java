@@ -3,9 +3,30 @@ package Package1;
 import java.util.Arrays;
 
 public class Stack {
-	int MAX = 10;
-	char[] myStack = new char[MAX];;
-	int top = 0;
+	int MAX;
+	char[] myStack;
+	int top;
+	String text;
+	
+	public Stack() {
+		this.MAX = 10;
+		this.top = 0;
+		this.myStack = new char[MAX];
+	}
+	
+	public Stack(String text) {
+		String myText = "";
+		for(int i=0; i<text.length(); i++) {
+			if(text.charAt(i) != ' ') {
+				myText = myText + text.charAt(i);
+			}
+		}
+			
+		this.MAX = myText.length();
+		this.top = 0;
+		this.text = myText;
+		this.myStack = new char[MAX];
+	}
 	
 	public char pop() { 
 		if(top == 0) {
@@ -32,24 +53,24 @@ public class Stack {
 		System.out.println(Arrays.toString(myStack));
 	}
 	
-	public void invertir(String text) {
+	public void invertir() {
 		int j = 0;
-		for(int i=text.length()-1; i>=0; i--) {
-			this.myStack[j] = text.toLowerCase().charAt(i);
+		for(int i=this.text.length()-1; i>=0; i--) {
+			this.myStack[j] = this.text.toLowerCase().charAt(i);
 			j++;
 		}
 	}
 	
-	public boolean palindromo(String text) {
-		this.invertir(text);
+	public boolean palindromo() {
+		this.invertir();
 		int j = 0;
-		for(int i=0; i<text.length(); i++) {
-			if(myStack[i] == text.toLowerCase().charAt(i)) {
+		for(int i=0; i<this.text.length(); i++) {
+			if(myStack[i] == this.text.toLowerCase().charAt(i)) {
 				j++;
 			}
 		}
 		
-		if(j==text.length()) {
+		if(j==this.text.length()) {
 			return true;
 		} else {
 			return false;

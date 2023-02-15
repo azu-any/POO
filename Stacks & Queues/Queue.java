@@ -3,10 +3,16 @@ package Package1;
 import java.util.Arrays;
 
 public class Queue {
-	int max = 10;
-	char[] myQueue = new char[max];
-	int tail = 0;
+	int max;
+	int tail;
+	char[] myQueue;
+	String text;
 	
+	public Queue() {
+		this.max = 10;
+		this.tail = 0;
+		this.myQueue = new char[max];
+	}
 	
 	public void insert(char data) {
 		if(tail == max) {
