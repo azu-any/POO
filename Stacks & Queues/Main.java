@@ -7,6 +7,8 @@ public class Main {
 		Queue myQueue = new Queue();
 		Stack myStack = new Stack();
 		
+		Stack myStack2 = new Stack();
+		
 		myQueue.print();
 		myQueue.insert('1');
 		myQueue.print();
@@ -24,6 +26,10 @@ public class Main {
 		myStack.print();
 		myStack.pop();
 		myStack.print();
+		
+		myStack2.invertir("Ana");
+		myStack2.print();
+		System.out.println(myStack2.palindromo("Ana"));
 	}
 
 }
