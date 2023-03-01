@@ -1,163 +1,110 @@
 package P1;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
-		
 		Random random = new Random();
-		int a = random.nextInt(1, 3);
-		int b = random.nextInt(3, 5);
-		int c = random.nextInt(5, 7);
-		int d = random.nextInt(7, 9);
-
-		Persona myPerson = new Persona("Juan", a, b, c, d);
 		
-		System.out.println(myPerson.getNombre());
-		System.out.println(myPerson.getA1(a));
-		System.out.println(myPerson.getA2(b));
-		System.out.println(myPerson.getA3(c));
-		System.out.println(myPerson.getA4(d));
+		Persona[] myPeople = new Persona[10];
+		String[] nombres = new String[]{"Juan", "Maria", "Ana", "Pedro", "Emi", "Victor", "Yael", "Manuel", "Oscar", "Diego"};
 		
-		System.out.println();
+		int[] Orden = {0,1,2,3,4,5,6,7,8,9};
 		
-		a = random.nextInt(1, 3);
-		b = random.nextInt(3, 5);
-		c = random.nextInt(5, 7);
-		d = random.nextInt(7, 9);
-		Persona myPerson2 = new Persona("Ana", a, b, c, d);
+		int k = 10;
 		
-		System.out.println(myPerson2.getNombre());
-		System.out.println(myPerson2.getA1(a));
-		System.out.println(myPerson2.getA2(b));
-		System.out.println(myPerson2.getA3(c));
-		System.out.println(myPerson2.getA4(d));
+		for(int i=0; i<10;i++) {
+			int number = random.nextInt(k);
+			
+			
+			myPeople[i] = new Persona(nombres[Orden[number]]);
+			
+			System.out.println(myPeople[i].getNombre());
+			System.out.println("¿Es alto?" + myPeople[i].getAlto());
+			System.out.println("¿Practica musica?" + myPeople[i].getMusica());
+			System.out.println("¿Practica deporte?" + myPeople[i].getDeporte());
+			System.out.println("¿Tiene hermanos?" + myPeople[i].getHermanos());
+			System.out.println();
+			
+			k--;
+			for(int j=0;j<10; j++)
+			{
+				if(j==number) {
+					Orden[j] = Orden[k];
+					Orden[k] = 0;
+				}
+			}
+		}
 		
-		System.out.println();
-		
-		a = random.nextInt(1, 3);
-		b = random.nextInt(3, 5);
-		c = random.nextInt(5, 7);
-		d = random.nextInt(7, 9);
-		Persona myPerson3 = new Persona("Maria", a, b, c, d);
-		
-		System.out.println(myPerson3.getNombre());
-		System.out.println(myPerson3.getA1(a));
-		System.out.println(myPerson3.getA2(b));
-		System.out.println(myPerson3.getA3(c));
-		System.out.println(myPerson3.getA4(d));
-		
-		System.out.println();
-		
-		a = random.nextInt(1, 3);
-		b = random.nextInt(3, 5);
-		c = random.nextInt(5, 7);
-		d = random.nextInt(7, 9);
-		Persona myPerson4 = new Persona("Pedro", a, b, c, d);
-		
-		System.out.println(myPerson4.getNombre());
-		System.out.println(myPerson4.getA1(a));
-		System.out.println(myPerson4.getA2(b));
-		System.out.println(myPerson4.getA3(c));
-		System.out.println(myPerson4.getA4(d));
-		
-		System.out.println();
-		
-		a = random.nextInt(1, 3);
-		b = random.nextInt(3, 5);
-		c = random.nextInt(5, 7);
-		d = random.nextInt(7, 9);
-		Persona myPerson5 = new Persona("Diego", a, b, c, d);
-		
-		System.out.println(myPerson5.getNombre());
-		System.out.println(myPerson5.getA1(a));
-		System.out.println(myPerson5.getA2(b));
-		System.out.println(myPerson5.getA3(c));
-		System.out.println(myPerson5.getA4(d));
-		
-		System.out.println();
-		
-		a = random.nextInt(1, 3);
-		b = random.nextInt(3, 5);
-		c = random.nextInt(5, 7);
-		d = random.nextInt(7, 9);
-		Persona myPerson6 = new Persona("Emilio", a, b, c, d);
-		
-		System.out.println(myPerson6.getNombre());
-		System.out.println(myPerson6.getA1(a));
-		System.out.println(myPerson6.getA2(b));
-		System.out.println(myPerson6.getA3(c));
-		System.out.println(myPerson6.getA4(d));
-		
-		System.out.println();
-		
-		a = random.nextInt(1, 3);
-		b = random.nextInt(3, 5);
-		c = random.nextInt(5, 7);
-		d = random.nextInt(7, 9);
-		Persona myPerson7 = new Persona("Michelle", a, b, c, d);
-		
-		System.out.println(myPerson7.getNombre());
-		System.out.println(myPerson7.getA1(a));
-		System.out.println(myPerson7.getA2(b));
-		System.out.println(myPerson7.getA3(c));
-		System.out.println(myPerson7.getA4(d));
-		
-		System.out.println();
-		
-		a = random.nextInt(1, 3);
-		b = random.nextInt(3, 5);
-		c = random.nextInt(5, 7);
-		d = random.nextInt(7, 9);
-		Persona myPerson8 = new Persona("Yael", a, b, c, d);
-		
-		System.out.println(myPerson8.getNombre());
-		System.out.println(myPerson8.getA1(a));
-		System.out.println(myPerson8.getA2(b));
-		System.out.println(myPerson8.getA3(c));
-		System.out.println(myPerson8.getA4(d));
-		
-		System.out.println();
-		
-		a = random.nextInt(1, 3);
-		b = random.nextInt(3, 5);
-		c = random.nextInt(5, 7);
-		d = random.nextInt(7, 9);
-		Persona myPerson9 = new Persona("Victor", a, b, c, d);
-		
-		System.out.println(myPerson9.getNombre());
-		System.out.println(myPerson9.getA1(a));
-		System.out.println(myPerson9.getA2(b));
-		System.out.println(myPerson9.getA3(c));
-		System.out.println(myPerson9.getA4(d));
-		
-		System.out.println();
-		
-		a = random.nextInt(1, 3);
-		b = random.nextInt(3, 5);
-		c = random.nextInt(5, 7);
-		d = random.nextInt(7, 9);
-		Persona myPerson10 = new Persona("Jose", a, b, c, d);
-		
-		System.out.println(myPerson10.getNombre());
-		System.out.println(myPerson10.getA1(a));
-		System.out.println(myPerson10.getA2(b));
-		System.out.println(myPerson10.getA3(c));
-		System.out.println(myPerson10.getA4(d));
-		
-		System.out.println();
 		
 		System.out.println("Son altos: " + Humano.getContAlto());
-		System.out.println("Usan lentes: " + Humano.getContLentes());
-		System.out.println("Hablan ingles: " + Humano.getContIngles());
 		System.out.println("Practican musica: " + Humano.getContMusica());
 		System.out.println("Practican deporte: " + Humano.getContDeporte());
-		System.out.println("Son menores de edad: " + Humano.getContMenor());
 		System.out.println("Tienen hermanos: " + Humano.getContHermanos());
-		System.out.println("Trabajan: " + Humano.getContTrabaja());
 
+		int index = random.nextInt(10);
+		
+		System.out.println();
+		System.out.println("¡Adivina la persona!");
+		System.out.println();
+		
+		Scanner scan = new Scanner(System.in);
+		
+		for(int i=0; i<3; i++) {
+			System.out.println("1. ¿Es alto?");
+			System.out.println("2. ¿Practica musica?");
+			System.out.println("3. ¿Practica deporte?");
+			System.out.println("4. ¿Tiene hermanos?");
+			
+			String opcion = scan.nextLine();
+			
+			switch (opcion) {
+				case "1":
+					System.out.println("¿Es alto? " + myPeople[index].getAlto());
+					System.out.println();
+					break;
+					
+				case "2":
+					System.out.println("¿Practica musica? " + myPeople[index].getMusica());
+					System.out.println();
+					break;
+					
+				case "3":
+					System.out.println("¿Practica deporte? " + myPeople[index].getDeporte());
+					System.out.println();
+					break;
+					
+				case "4":
+					System.out.println("¿Tiene hermanos? " + myPeople[index].getHermanos());
+					System.out.println();
+					break;
+					
+				default:
+					System.out.println("Opcion invalida. Digite otra opcion");
+					System.out.println();
+					continue;
+			}
+		}
+		
+		System.out.println("¿Quien es?");
+		
+		int n = 0;
+		for(Persona Per: myPeople) {
+			System.out.println(n + " " + Per.getNombre());
+			n++;
+		}
+		
+		String respuesta = scan.nextLine();
+		if(Integer.parseInt(respuesta) == index) {
+			System.out.println("¡Felicidades ganaste!");
+		} else {
+			System.out.println("Perdiste. La respuesta era: " + myPeople[index].getNombre());
+		}
+		
+		scan.close();
 
 	}
 
