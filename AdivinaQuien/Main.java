@@ -55,6 +55,13 @@ public class Main {
 		
 		int[] res = {0,1,2,3,4,5,6,7,8,9};
 		
+		for(int n=0; n<10; n++) {
+			if(res[n] != -1) {
+				System.out.println(n + " " + myPeople[n].getNombre());
+			}
+		}
+		System.out.println();
+		
 		for(int i=0; i<3; i++) {
 			System.out.println("1. ¿Es alto?");
 			System.out.println("2. ¿Practica musica?");
