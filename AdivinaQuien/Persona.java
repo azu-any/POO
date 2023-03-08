@@ -11,31 +11,32 @@ public class Persona extends Humano {
 	
 	public Persona(String nombre) {
 		super(nombre);
-		setAlto();
-		setMusica();
-		setDeporte();
-		setHermanos();
-		
+		this.setAlto(this.myBool());
+		this.setMusica(this.myBool());
+		this.setDeporte(this.myBool());
+		this.setHermanos(this.myBool());	
 	}
 	
 	Random random = new Random();
+	
+	public Boolean myBool() {
+		Boolean bool = random.nextBoolean();
+		return bool;
+	}
 
 	public Boolean getAlto() {
 		return alto;
 	}
-	public void setAlto() {
-		Boolean bool = random.nextBoolean();
+	public void setAlto(Boolean bool) {
 		this.alto = bool;
 		if(this.alto == true)
 			Humano.setContAlto();
 	}
 	
-
 	public Boolean getMusica() {
 		return musica;
 	}
-	public void setMusica() {
-		Boolean bool = random.nextBoolean();
+	public void setMusica(Boolean bool) {
 		this.musica = bool;
 		if(this.musica == true)
 			Humano.setContMusica();
@@ -44,19 +45,16 @@ public class Persona extends Humano {
 	public Boolean getDeporte() {
 		return deporte;
 	}
-	public void setDeporte() {
-		Boolean bool = random.nextBoolean();
+	public void setDeporte(Boolean bool) {
 		this.deporte = bool;
 		if(this.deporte == true)
 			Humano.setContDeporte();
 	}
-	//random.nextboolean
-
+	
 	public Boolean getHermanos() {
 		return hermanos;
 	}
-	public void setHermanos() {
-		Boolean bool = random.nextBoolean();
+	public void setHermanos(Boolean bool) {
 		this.hermanos = bool;
 		if(this.hermanos == true)
 			Humano.setContHermanos();
