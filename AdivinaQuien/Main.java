@@ -25,18 +25,32 @@ public class Main {
 			// Control de personas unicas
 			if(i>0) {
 				for(int n=0; n<i; n++) {
-					if(myPeople[i] == myPeople[n]) {
-						for(int l=0; l<4; l++) {
-							if(myPeople[i].getAlto() == myPeople[n].getAlto()) {
+					if(myPeople[i].getAlto() == myPeople[n].getAlto() && myPeople[i].getMusica() == myPeople[n].getMusica() && myPeople[i].getDeporte() == myPeople[n].getDeporte() && myPeople[i].getHermanos() == myPeople[n].getHermanos()) {
+						System.out.println("h");
+						int rand = random.nextInt(4);
+						
+						switch(rand) {
+							
+							case 0:
 								myPeople[i].setAlto(!myPeople[n].getAlto());
-							} else if (myPeople[i].getMusica() == myPeople[n].getMusica()) {
+								break;
+							
+							case 1:
 								myPeople[i].setMusica(!myPeople[n].getMusica());
-							} else if (myPeople[i].getDeporte() == myPeople[n].getDeporte()) {
+								break;
+						
+							case 2:
 								myPeople[i].setDeporte(!myPeople[n].getDeporte());
-							} else if (myPeople[i].getHermanos() == myPeople[n].getHermanos()) {
+								break;
+							
+							case 3:
 								myPeople[i].setHermanos(!myPeople[n].getHermanos());
-							}
+								break;
+								
+							default:
+								break;
 						}
+						n = 0;
 					} 
 				}
 			}
