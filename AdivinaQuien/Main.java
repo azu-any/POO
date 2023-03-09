@@ -26,7 +26,6 @@ public class Main {
 			if(i>0) {
 				for(int n=0; n<i; n++) {
 					if(myPeople[i].getAlto() == myPeople[n].getAlto() && myPeople[i].getMusica() == myPeople[n].getMusica() && myPeople[i].getDeporte() == myPeople[n].getDeporte() && myPeople[i].getHermanos() == myPeople[n].getHermanos()) {
-						System.out.println("h");
 						int rand = random.nextInt(4);
 						
 						switch(rand) {
