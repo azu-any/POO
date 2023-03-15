@@ -32,15 +32,14 @@ public class Menu {
 				this.win = 0;
 				this.game = 0;
 				
-				System.out.println("Ho");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
 	}
 	
-	public void winner() {
-		this.win++;
+	public void winner(int n) {
+		this.win += n;
 	}
 	
 	public void game() {
@@ -50,10 +49,10 @@ public class Menu {
 	public void save() {
 		try {
 			BufferedWriter fWriter = new BufferedWriter(new FileWriter(path));
-			 fWriter.write("Wins: " + this.win + "\n");
-			 fWriter.write("Games: " + this.game);
+			fWriter.write("Wins: " + this.win + "\n");
+			fWriter.write("Games: " + this.game);
 
-			 fWriter.close();
+			fWriter.close();
 		} catch (IOException e) {
 			
 		}
