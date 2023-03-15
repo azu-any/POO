@@ -1,2 +1,2 @@
-Wins: 1
-Games: 1
+Wins: 4
+Games: 4
